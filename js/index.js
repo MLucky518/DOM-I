@@ -55,7 +55,7 @@ navLinks[5].textContent = "Contact"*/
 const navLinks = document.querySelectorAll("a");
 console.log(navLinks);
 navLinks.forEach((element,i)=>{
-  element.textContent = siteContent["nav"][`nav-item-${i}`];
+  element.textContent = siteContent["nav"][`nav-item-${i+1}`];
 });
 
 
@@ -122,7 +122,7 @@ function mouseOut(obj) {
 var element = document.querySelector("body");
 
                                   
-element.addEventListener("click", function(e) {
+element.addEventListener("click", function() {
   if(element.style.color === "red"){
     element.style.color = "black";
   }
@@ -139,6 +139,19 @@ element.addEventListener("click", function(e) {
   function blowOut(obj){
     obj.style.color = "black";
   }
+
+let nav1 = document.createElement("a");
+let nav2 = document.createElement("a");
+var nav1Text= document.createTextNode('Start');
+var nav2Text= document.createTextNode('Finish');
+
+nav1.appendChild(nav1Text);
+nav2.appendChild(nav2Text);
+let firstNav = document.querySelector("nav");
+
+firstNav.appendChild(nav1);
+firstNav.prepend(nav2);
+
 
  
   
